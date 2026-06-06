@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Wordle Unlimited</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Apply saved/system theme before paint to avoid a flash.
+    (function () {
+      try {
+        var saved = localStorage.getItem("wu-theme");
+        var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <button id="new-game" class="icon-btn" title="New random puzzle" aria-label="New random puzzle">&#x21bb;</button>
+    </div>
+    <h1 class="title">Wordle Unlimited</h1>
+    <div class="header-right">
+      <button id="stats-btn" class="icon-btn" title="Statistics" aria-label="Statistics">&#x1F4CA;</button>
+      <button id="auth-btn" class="icon-btn" title="Sign in with Google" aria-label="Sign in with Google">&#x1F464;</button>
+      <img id="user-avatar" class="user-avatar" alt="" hidden referrerpolicy="no-referrer" />
+      <button id="theme-toggle" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">&#x1F319;</button>
+    </div>
+  </header>
+
+  <div class="puzzle-bar">
+    <label for="puzzle-input">Puzzle #</label>
+    <input id="puzzle-input" type="number" min="1" inputmode="numeric" />
+    <button id="puzzle-go" class="text-btn">Go</button>
+    <span id="puzzle-range" class="puzzle-range"></span>
+    <label class="hardmode-toggle" title="Unlocks thousands of obscure words at higher puzzle numbers">
+      <input id="hardmode-checkbox" type="checkbox" />
+      <span>Hard mode</span>
+    </label>
+    <span id="hardmode-hint" class="hardmode-hint" hidden></span>
+  </div>
+
+  <main class="game">
+    <div id="board-container" class="board-container">
+      <div id="board" class="board" aria-label="Wordle board"></div>
+    </div>
+
+    <div id="keyboard" class="keyboard" aria-label="Keyboard"></div>
+  </main>
+
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <div id="stats-overlay" class="overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="stats-title">
+      <button id="stats-close" class="modal-close" aria-label="Close">&times;</button>
+      <h2 id="stats-title" class="modal-title">Statistics</h2>
+
+      <div id="stats-account" class="stats-account"></div>
+
+      <div class="stats-grid">
+        <div class="stat-block">
+          <div id="stat-played" class="stat-num">0</div>
+          <div class="stat-label">Played</div>
+        </div>
+        <div class="stat-block">
+          <div id="stat-winpct" class="stat-num">0</div>
+          <div class="stat-label">Win %</div>
+        </div>
+        <div class="stat-block">
+          <div id="stat-streak" class="stat-num">0</div>
+          <div class="stat-label">Current Streak</div>
+        </div>
+        <div class="stat-block">
+          <div id="stat-maxstreak" class="stat-num">0</div>
+          <div class="stat-label">Max Streak</div>
+        </div>
+      </div>
+
+      <h3 class="dist-title">Guess Distribution</h3>
+      <div id="guess-distribution" class="guess-distribution"></div>
+
+      <div class="stats-footer">
+        <button id="stats-signin" class="text-btn">Sign in with Google</button>
+        <button id="stats-signout" class="text-btn ghost" hidden>Sign out</button>
+        <p id="stats-sync-note" class="sync-note"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/words.js"></script>
+  <script src="js/game.js"></script>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>
