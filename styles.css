@@ -7,9 +7,9 @@
   --tile-text: #1a1a1b;
   --key-bg: #d3d6da;
   --key-text: #1a1a1b;
-  --color-correct: #6aaa64;
-  --color-present: #c9b458;
-  --color-absent: #787c7e;
+  --color-correct: #460bd1;
+  --color-present: #c42c06fa;
+  --color-absent: #3a3a3c;
   --tile-evaluated-text: #ffffff;
   --toast-bg: #1a1a1b;
   --toast-text: #ffffff;
@@ -25,8 +25,8 @@
   --tile-text: #ffffff;
   --key-bg: #818384;
   --key-text: #ffffff;
-  --color-correct: #538d4e;
-  --color-present: #b59f3b;
+  --color-correct: #460bd1;
+  --color-present: #c42c06fa;
   --color-absent: #3a3a3c;
   --tile-evaluated-text: #ffffff;
   --toast-bg: #ffffff;
@@ -343,7 +343,7 @@ body {
   font-style: italic;
 }
 
-/* ---------- Confetti ---------- */
+/* ---------- Hearts ---------- */
 .confetti-layer {
   position: fixed;
   inset: 0;
@@ -355,7 +355,9 @@ body {
 .confetti-piece {
   position: absolute;
   top: -20px;
-  border-radius: 2px;
+  left: 0;
+  font-size: 20px;      /* Adjust heart size */
+  line-height: 1;
   opacity: 0;
   will-change: transform, opacity;
   animation-name: confetti-fall;
@@ -368,9 +370,11 @@ body {
     transform: translate3d(0, -10vh, 0) rotate(0deg);
     opacity: 1;
   }
+
   100% {
-    transform: translate3d(var(--drift, 0), 105vh, 0) rotate(var(--spin, 360deg));
-    opacity: 1;
+    transform: translate3d(var(--drift, 0), 105vh, 0)
+               rotate(var(--spin, 360deg));
+    opacity: 0;
   }
 }
 
