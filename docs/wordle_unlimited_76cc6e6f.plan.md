@@ -1,5 +1,5 @@
 ---
-name: Wordle Unlimited
+name: Things I love about/with you
 overview: Build a static (vanilla HTML/CSS/JS) unlimited Wordle clone in a new folder, using the official answers list as the secret-word pool, with puzzle-number selection, full official UI/colors, an on-screen keyboard, and dark/light themes.
 todos:
   - id: fetch-words
