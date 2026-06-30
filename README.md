@@ -17,8 +17,8 @@ An unlimited, self-hosted clone of Wordle. Play as many games as you want, jump 
 
 1. Guess the hidden 5-letter word in 6 tries.
 2. After each guess, tile colors give feedback:
-   - **Green** - correct letter, correct spot.
-   - **Yellow** - correct letter, wrong spot.
+   - **Blue** - correct letter, correct spot.
+   - **Red** - correct letter, wrong spot.
    - **Gray** - letter not in the word.
 3. Use your physical keyboard or the on-screen one.
 
