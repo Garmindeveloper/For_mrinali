@@ -352,28 +352,34 @@
   /* ---------- Congrats confetti ---------- */
 
   function launchConfetti() {
-    const colors = ["#6aaa64", "#c9b458", "#538d4e", "#b59f3b", "#f5793a", "#85c0f9", "#ffffff"];
     const layer = document.createElement("div");
     layer.className = "confetti-layer";
     document.body.appendChild(layer);
 
+    const hearts = ["❤️", "💕", "💖", "💗", "💘", "💝"];
     const pieces = 140;
+
     for (let i = 0; i < pieces; i++) {
       const piece = document.createElement("div");
       piece.className = "confetti-piece";
-      const left = Math.random() * 100;
-      const size = 6 + Math.random() * 8;
-      const duration = 2.2 + Math.random() * 1.8;
-      const delay = Math.random() * 0.6;
-      const drift = (Math.random() * 2 - 1) * 120;
-      piece.style.left = left + "vw";
-      piece.style.width = size + "px";
-      piece.style.height = size * (0.5 + Math.random()) + "px";
-      piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-      piece.style.animationDuration = duration + "s";
-      piece.style.animationDelay = delay + "s";
-      piece.style.setProperty("--drift", drift + "px");
+
+      // Pick a random heart
+      piece.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+      // Random position
+      piece.style.left = Math.random() * 100 + "vw";
+
+      // Random heart size
+      piece.style.fontSize = (16 + Math.random() * 18) + "px";
+
+      // Animation timing
+      piece.style.animationDuration = (2.2 + Math.random() * 1.8) + "s";
+      piece.style.animationDelay = Math.random() * 0.6 + "s";
+
+      // Random drift and spin
+      piece.style.setProperty("--drift", (Math.random() * 240 - 120) + "px");
       piece.style.setProperty("--spin", (Math.random() * 720 - 360) + "deg");
+
       layer.appendChild(piece);
     }
 
