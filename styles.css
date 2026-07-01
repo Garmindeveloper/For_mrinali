@@ -412,9 +412,10 @@ body {
 }
 
 .tile-row {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(var(--word-length), var(--tile-size));
+    gap: 6px;
+    justify-content: center;
 }
 
 .tile {
