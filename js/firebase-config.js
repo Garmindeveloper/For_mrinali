@@ -9,7 +9,7 @@
 // normally and tracks stats in this browser only (no login, no cloud sync).
 // -----------------------------------------------------------------------------
 window.FIREBASE_CONFIG = {
-  apiKey: "",
+  apiKey: "AIzaSyB17843f_PGOz4NWyFvoqfcLVOMmHi30KM",
   authDomain: "wordle-unlimited-official.firebaseapp.com",
   projectId: "wordle-unlimited-official",
   storageBucket: "wordle-unlimited-official.firebasestorage.app",
