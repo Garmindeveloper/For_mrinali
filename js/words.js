@@ -4,7 +4,7 @@
 
 const ANSWERS = [
   'amour','smile','heart','laugh','wings','taste','smell','silly','smooth','booty',
-  'stars', 'honey', 'night', 'umbra', 'loveyou'
+  'stars', 'honey', 'night', 'umbra', 'loveyou',
 ];
 
 const VALID_WORDS = new Set([
