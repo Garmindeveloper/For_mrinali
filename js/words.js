@@ -3,15 +3,18 @@
 // VALID_WORDS: every word accepted as a guess (answers + allowed guesses).
 
 const ANSWERS = [
-  'amour','smile','heart','laugh','wings','taste','smooth','booty',
-  'stars', 'honey', 'night', 'umbra', 'loveyou','domme','horny','bondage',
+  'amour','smile','heart','laugh','wings','tasty','caress','booty',
+  'stars', 'honey', 'night', 'umbra', 'loveyou','domme','bondage',
   'pussy','curves','scent','giggle','petite','silly','mature','froyo','withers',
-  'mygirl','mylove','drives','topgolf','borns',
+  'mygirl','drives','topgolf','borns','lovely','sassy',''kinky','calming','cuddles', 
+  'walks','explore','passion','improve','humble','amazing','desired','league','future',
+  'forever','caring','charmed','passion','nervous','horror','whimsy','dessert',
 ];
 
 const VALID_WORDS = new Set([
   'domme','horny','bondage','pussy','froyo','withers',
-  'mygirl','mylove','topgolf','borns','loveyou', 'aahed','aalii','aargh','aarti','abaca','abaci','aback','abacs','abaft','abaka',
+  'mygirl','mylove','topgolf','borns','loveyou', 'aahed','aalii','aargh','aarti',
+  'abaca','abaci','aback','abacs','abaft','abaka',
   'abamp','aband','abase','abash','abask','abate','abaya','abbas','abbed','abbes',
   'abbey','abbot','abcee','abeam','abear','abele','abers','abets','abhor','abide',
   'abies','abled','abler','ables','ablet','ablow','abmho','abode','abohm','aboil',
