@@ -8,7 +8,7 @@ const ANSWERS = [
   'pussy','curves','scent','giggle','petite','silly','mature','froyo','withers',
   'mygirl','drives','topgolf','borns','lovely','sassy',''kinky','calming','cuddles', 
   'walks','explore','passion','improve','humble','amazing','desired','league','future',
-  'forever','caring','charmed','passion','nervous','horror','whimsy','dessert',
+  'forever','caring','charmed','passion','nervous','horror','whimsy','dessert'
 ];
 
 const VALID_WORDS = new Set([
