@@ -6,7 +6,7 @@ const ANSWERS = [
   'amour','smile','heart','laugh','wings','tasty','caress','booty',
   'stars', 'honey', 'night', 'umbra', 'loveyou','domme','bondage',
   'pussy','curves','scent','giggle','petite','silly','mature','froyo','withers',
-  'mygirl','drives','topgolf','borns','lovely','sassy',''kinky','calming','cuddles', 
+  'mygirl','drives','topgolf','borns','lovely','sassy','kinky','calming','cuddles', 
   'walks','explore','passion','improve','humble','amazing','desired','league','future',
   'forever','caring','charmed','passion','nervous','horror','whimsy','dessert','winks','tickles',
 ];
