@@ -420,12 +420,12 @@ window.addEventListener("resize", function () {
       const row = getRowEl(state.currentRow);
       row.classList.add("win");
       const messages = [
-        "Good Girl",
-        "I knew you would get it",
+        "Did you cheat?",
+        "That was quicker than I last inside you",
+        "What a good girl",
         "Congrats, Honeybee",
-        "I miss you",
         "Sexy",
-        "Fuck, should I be horny?",
+        "Fuck, should the risk have made me horny?",
       ];
       showToast(messages[state.currentRow] || "Well done!", 2000);
       launchConfetti();
