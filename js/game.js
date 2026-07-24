@@ -1,6 +1,11 @@
 (function () {
   "use strict";
-
+  const STATE_RANK = {
+    absent: 1,
+    present: 2,
+    correct: 3,
+    double: 4
+  };
   const TARGET_LENGTHS = [5, 6, 7];
   const MAX_ROWS = 6;
   const KEY_LAYOUT = [
