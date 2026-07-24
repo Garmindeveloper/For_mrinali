@@ -14,6 +14,7 @@
   --toast-bg: #1a1a1b;
   --toast-text: #ffffff;
   --muted: #787c7e;
+  --color-double: #00c853;   /* pick any green you like */
 }
 
 [data-theme="dark"] {
@@ -28,6 +29,7 @@
   --color-correct: #460bd1;
   --color-present: #c42c06fa;
   --color-absent: #3a3a3c;
+  --color-double: #00c853;
   --tile-evaluated-text: #ffffff;
   --toast-bg: #ffffff;
   --toast-text: #121213;
@@ -440,6 +442,7 @@ body {
 
 .tile[data-state="correct"],
 .tile[data-state="present"],
+.tile[data-state="double"],
 .tile[data-state="absent"] {
   color: var(--tile-evaluated-text);
   border: none;
@@ -455,6 +458,10 @@ body {
 
 .tile[data-state="absent"] {
   background: var(--color-absent);
+}
+
+.tile[data-state="double"] {
+  background: var(--color-double);
 }
 
 @keyframes pop {
@@ -552,6 +559,12 @@ body {
 
 .key[data-state="absent"] {
   background: var(--color-absent);
+  color: #ffffff;
+}
+
+
+.key[data-state="double"] {
+  background: var(--color-double);
   color: #ffffff;
 }
 
