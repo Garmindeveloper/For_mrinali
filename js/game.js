@@ -1,11 +1,5 @@
 (function () {
   "use strict";
-  const STATE_RANK = {
-    absent: 1,
-    present: 2,
-    correct: 3,
-    double: 4
-  };
   const TARGET_LENGTHS = [5, 6, 7];
   const MAX_ROWS = 6;
   const KEY_LAYOUT = [
@@ -15,7 +9,7 @@
   ];
 
   // Coloring priority so a key is never downgraded (e.g. green stays green).
-  const STATE_RANK = { absent: 1, present: 2, correct: 3 };
+  const STATE_RANK = { absent: 1, present: 2, correct: 3, double:4 };
 
   const boardEl = document.getElementById("board");
   const keyboardEl = document.getElementById("keyboard");
@@ -386,6 +380,19 @@ window.addEventListener("resize", function () {
         counts[ch]--;
       }
     }
+    // Pass 3: mark duplicate correct letters
+   for (let i = 0; i < len; i++) {
+     if (result[i] === "correct") {
+       const ch = guess[i];
+
+       const occurrences =
+         secret.split(ch).length - 1;
+
+       if (occurrences > 1) {
+         result[i] = "double";
+       }
+     }
+   }
 
     return result;
   }
